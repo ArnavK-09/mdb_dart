@@ -6,6 +6,14 @@ class ObjectNotFound implements Exception {
   String toString() => 'ObjectNotFound: $message';
 }
 
+class ObjectAlreadyExists implements Exception {
+  final String message;
+  ObjectAlreadyExists([this.message = 'Object already exists']);
+
+  @override
+  String toString() => 'ObjectAlreadyExists: $message';
+}
+
 class ObjectNotSupported implements Exception {
   final String message;
   ObjectNotSupported([this.message = 'Object not supported.']);

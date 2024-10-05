@@ -1,9 +1,12 @@
 import 'package:dart_minds/dart_minds.dart' as minds;
-import 'package:dart_minds/src/datasources.dart';
 
 void main() async {
-  var client = minds.Client("api key");
+  var client = minds.Client(
+      "0d2e46cb8534041f3266251faaa810a2302b47da543dd4346624825c1f133096");
 
+  print(await client.datasources.list());
+
+/*
   var postgresConfig = DatabaseConfig(
     name: 'my_datasource',
     description: '<DESCRIPTION-OF-YOUR-DATA>',
@@ -41,5 +44,5 @@ void main() async {
   print(await client.minds.list());
   print(await client.datasources.list());
   print(client);
-  print(postgresConfig.toJson());
+  print(postgresConfig.toJson()); */
 }

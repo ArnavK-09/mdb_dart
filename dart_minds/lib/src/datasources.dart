@@ -44,7 +44,7 @@ class Datasources {
   Datasources(this.client);
 
   Future<Datasource> create(DatabaseConfig dsConfig,
-      [bool replace = false]) async {
+      {bool replace = false}) async {
     final name = dsConfig.name;
 
     if (replace) {
@@ -99,3 +99,17 @@ class Datasources {
     await client.api.delete('/datasources/$name');
   }
 }
+
+final demoDatasourceConfigForTesting = DatabaseConfig(
+  name: 'example_ds',
+  description: 'House Sales Data',
+  engine: 'postgres',
+  connectionData: {
+    'user': 'demo_user',
+    'password': 'demo_password',
+    'host': 'samples.mindsdb.com',
+    'port': '5432',
+    'database': 'demo',
+    'schema': 'demo_data'
+  },
+);

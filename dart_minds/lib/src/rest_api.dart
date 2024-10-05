@@ -15,6 +15,10 @@ void _raiseForStatus(http.Response response) {
     throw Unauthorized(response.body);
   }
 
+  if (response.statusCode == 409) {
+    throw ObjectAlreadyExists(response.body);
+  }
+
   if (response.statusCode >= 400 && response.statusCode < 600) {
     throw UnknownError('Error ${response.statusCode}: ${response.body}');
   }
@@ -29,7 +33,10 @@ class RestAPI {
   }
 
   Map<String, String> _headers() {
-    return {'Authorization': 'Bearer $apiKey'};
+    return {
+      'Authorization': 'Bearer $apiKey',
+      'Content-Type': 'application/json'
+    };
   }
 
   Future<http.Response> get(String url) async {
