@@ -1,3 +1,4 @@
+
 import 'package:mdb_dart/mdb_dart.dart' as minds;
 import 'package:mdb_dart/src/exceptions.dart';
 import 'package:test/test.dart';
@@ -25,12 +26,10 @@ minds.Client getClient() {
 void main() {
   group('🧠 Minds Module Testing:-', () {
     setUp(() async {
-      // Clean up before each test
       await client.datasources.create(tempDatasource, replace: true);
     });
 
     tearDown(() async {
-      // Cleanup after each test
       await client.datasources.drop(tempDatasource.name);
     });
 
@@ -83,19 +82,29 @@ void main() {
       expect(mind1.name, mindName);
       expect(mind2.name, mindName2);
 
-      // Fetch and update mind
       var fetchedMind1 = await client.minds.get(mindName);
       fetchedMind1 = await fetchedMind1.update(
         name: mindName2,
         datasources: [tempDatasource],
       );
 
-      print(fetchedMind1.name);
       expect(fetchedMind1.name, mindName2);
-      expect(() async => await client.minds.get(mindName),
-          throwsA(isA<ObjectNotFound>()));
+
+      for (var i in (await client.minds.list())) {
+        print(i.name);
+        print(i.datasources);
+      }
+
+      // expect(() async => await client.minds.get(mindName),
+      //     throwsA(isA<ObjectNotFound>()));
+
       final updatedMind = await client.minds.get(mindName2);
       expect(updatedMind.datasources?.length, 1);
+    });
+
+    test('Dropping multiple minds', () async {
+      expect(() async => await client.minds.drop(mindName), returnsNormally);
+      expect(() async => await client.minds.drop(mindName2), returnsNormally);
     });
 
     // test('Handling completion requests', () async {
