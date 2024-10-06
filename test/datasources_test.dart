@@ -1,14 +1,14 @@
-import 'package:dart_minds/dart_minds.dart' as minds;
-import 'package:dart_minds/src/exceptions.dart';
+import 'package:mdb_dart/mdb_dart.dart' as minds;
+import 'package:mdb_dart/src/exceptions.dart';
 import 'package:test/test.dart';
+import 'package:dartenv/dartenv.dart';
 
-const apiKey =
-    "";
-
+// Required Variables to succeed tests
+final apiKey = env("API_KEY");
 final client = minds.Client(apiKey);
-
 final demoConfig = minds.demoDatasourceConfigForTesting;
 
+// Whole Testing Stuff Here
 void main() {
   group('💿 Datasource Module Testing:-', () {
     test('Creating datasource', () async {

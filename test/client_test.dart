@@ -1,9 +1,12 @@
-import 'package:dart_minds/dart_minds.dart' as minds;
-import 'package:dart_minds/src/exceptions.dart';
+import 'package:mdb_dart/mdb_dart.dart' as minds;
+import 'package:mdb_dart/src/exceptions.dart';
 import 'package:test/test.dart';
+import 'package:dartenv/dartenv.dart';
 
-const apiKey =
-    "";
+// Required Variables to succeed tests
+final apiKey = env("API_KEY");
+
+// Whole Testing Stuff Here
 void main() {
   group('🤖 Client initialization keys check:-', () {
     test('Wrong API key does not works', () async {

@@ -2,6 +2,13 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'exceptions.dart';
 
+/// Checks the HTTP response status and throws the appropriate exception.
+///
+/// Throws [ObjectNotFound] for 404 errors.
+/// Throws [Forbidden] for 403 errors.
+/// Throws [Unauthorized] for 401 errors.
+/// Throws [ObjectAlreadyExists] for 409 errors.
+/// Throws [UnknownError] for other 4xx and 5xx errors.
 void _raiseForStatus(http.Response response) {
   if (response.statusCode == 404) {
     throw ObjectNotFound(response.body);
@@ -24,6 +31,9 @@ void _raiseForStatus(http.Response response) {
   }
 }
 
+/// A class for making HTTP requests to a RESTful API.
+///
+/// Takes an [apiKey] for authentication and a [baseUrl] for the API endpoint.
 class RestAPI {
   final String apiKey;
   late final String baseUrl;
@@ -32,6 +42,10 @@ class RestAPI {
     this.baseUrl = '${baseUrl.replaceAll(RegExp(r'/+$'), '')}/api';
   }
 
+  /// ### _headers
+  /// Generates the necessary HTTP headers for API requests.
+  ///
+  /// Returns a [Map] containing the 'Authorization' and 'Content-Type' headers.
   Map<String, String> _headers() {
     return {
       'Authorization': 'Bearer $apiKey',
@@ -39,6 +53,9 @@ class RestAPI {
     };
   }
 
+  /// Sends a GET request to the specified [url].
+  ///
+  /// Throws an [Exception] if the response status indicates an error.
   Future<http.Response> get(String url) async {
     final response =
         await http.get(Uri.parse('$baseUrl$url'), headers: _headers());
@@ -46,6 +63,9 @@ class RestAPI {
     return response;
   }
 
+  /// Sends a DELETE request to the specified [url].
+  ///
+  /// Throws an [Exception] if the response status indicates an error.
   Future<http.Response> delete(String url) async {
     final response =
         await http.delete(Uri.parse('$baseUrl$url'), headers: _headers());
@@ -53,6 +73,9 @@ class RestAPI {
     return response;
   }
 
+  /// Sends a POST request to the specified [url] with the provided [data].
+  ///
+  /// Throws an [Exception] if the response status indicates an error.
   Future<http.Response> post(String url, Map<String, dynamic> data) async {
     final response = await http.post(
       Uri.parse('$baseUrl$url'),
@@ -63,6 +86,9 @@ class RestAPI {
     return response;
   }
 
+  /// Sends a PATCH request to the specified [url] with the provided [data].
+  ///
+  /// Throws an [Exception] if the response status indicates an error.
   Future<http.Response> patch(String url, Map<String, dynamic> data) async {
     final response = await http.patch(
       Uri.parse('$baseUrl$url'),

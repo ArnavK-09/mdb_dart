@@ -1,10 +1,10 @@
-import 'package:dart_minds/dart_minds.dart' as minds;
+// import 'package:mdb_dart/mdb_dart.dart' as minds;
 
+// @ TODO
 void main() async {
-  var client = minds.Client(
-      "0d2e46cb8534041f3266251faaa810a2302b47da543dd4346624825c1f133096");
+  // var client = minds.Client(String.fromEnvironment("API_KEY"));
 
-  print(await client.datasources.list());
+  // print(env("API_KEY"));
 
 /*
   var postgresConfig = DatabaseConfig(
