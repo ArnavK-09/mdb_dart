@@ -2,11 +2,9 @@ name: 🧪 Run dart tests...
 
 on:
   push:
-    branches:
-      - *
+    branches: ["*"]
   pull_request:
-    branches:
-      - *
+    branches: ["*"]
 
 jobs:
   test:
