@@ -123,8 +123,6 @@ class Mind {
       data['parameters']['prompt_template'] = promptTemplate;
     }
 
-    print(
-        "fdsdjbckj ${(await client.minds.list()).first.name} ${this.name} | $name");
 
     await api.patch(
       '/projects/$project/minds/${this.name}',
