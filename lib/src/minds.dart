@@ -45,7 +45,7 @@ class Mind {
   final String? promptTemplate;
   final String? createdAt;
   final String? updatedAt;
-  List<dynamic>? datasources;
+  List<dynamic> datasources;
 
   /// Constructor
   Mind({
@@ -54,12 +54,13 @@ class Mind {
     this.modelName,
     this.provider,
     Map<String, dynamic>? parameters,
-    this.datasources,
+    List<dynamic>? datasources,
     this.createdAt,
     this.updatedAt,
   })  : api = client.api,
         parameters = parameters ?? {},
-        promptTemplate = parameters?['prompt_template'] as String?;
+        promptTemplate = parameters?['prompt_template'] as String?,
+        datasources = datasources ?? [];
 
   /// Updates the properties of the mind.
   ///
@@ -122,8 +123,11 @@ class Mind {
       data['parameters']['prompt_template'] = promptTemplate;
     }
 
+    print(
+        "fdsdjbckj ${(await client.minds.list()).first.name} ${this.name} | $name");
+
     await api.patch(
-      '/projects/$project/minds/$name',
+      '/projects/$project/minds/${this.name}',
       data,
     );
 

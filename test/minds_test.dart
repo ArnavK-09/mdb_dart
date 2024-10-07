@@ -1,4 +1,3 @@
-
 import 'package:mdb_dart/mdb_dart.dart' as minds;
 import 'package:mdb_dart/src/exceptions.dart';
 import 'package:test/test.dart';
@@ -27,10 +26,6 @@ void main() {
   group('🧠 Minds Module Testing:-', () {
     setUp(() async {
       await client.datasources.create(tempDatasource, replace: true);
-    });
-
-    tearDown(() async {
-      await client.datasources.drop(tempDatasource.name);
     });
 
     test('Creating mind', () async {
@@ -83,59 +78,43 @@ void main() {
       expect(mind2.name, mindName2);
 
       var fetchedMind1 = await client.minds.get(mindName);
-      fetchedMind1 = await fetchedMind1.update(
+
+      expect(() async {
+        var x = await fetchedMind1.update(
+          name: mindName2,
+          datasources: [tempDatasource],
+        );
+        print("rrrr ${x.name}");
+      }, throwsA(isA<ObjectAlreadyExists>()));
+    });
+
+    test('Updating data', () async {
+      var fetchedMind1 = await client.minds.get(mindName);
+      expect(() async {
+        await client.minds.drop(mindName2);
+      }, returnsNormally);
+
+      final updatedMind = await fetchedMind1.update(
         name: mindName2,
         datasources: [tempDatasource],
       );
 
-      expect(fetchedMind1.name, mindName2);
+      expect(updatedMind.name, equals(mindName2));
+      expect(fetchedMind1.name, equals(mindName2));
 
-      for (var i in (await client.minds.list())) {
-        print(i.name);
-        print(i.datasources);
-      }
-
-      // expect(() async => await client.minds.get(mindName),
-      //     throwsA(isA<ObjectNotFound>()));
-
-      final updatedMind = await client.minds.get(mindName2);
-      expect(updatedMind.datasources?.length, 1);
+      final fetchedMind = await client.minds.get(mindName2);
+      expect(fetchedMind.datasources.length, 1);
     });
 
     test('Dropping multiple minds', () async {
-      expect(() async => await client.minds.drop(mindName), returnsNormally);
-      expect(() async => await client.minds.drop(mindName2), returnsNormally);
+      // expect(() async => await client.minds.drop(mindName2), returnsNormally);
+      // expect(() async => await client.minds.drop(mindName),
+      // throwsA(isA<ObjectNotFound>()));
+      expect(() async => await client.datasources.drop(tempDatasource.name),
+          returnsNormally);
     });
 
     // test('Handling completion requests', () async {
-    //   final mind = await client.minds.create(
-    //     name: mindName,
-    //     modelName: "openai",
-    //     datasources: [tempDatasource],
-    //     replace: true
-    //   );
-
-    //   final response = await mind.completion('say hello');
-    //   expect(response.toLowerCase(), contains('hello'));
-
-    //   final dataResponse = await mind.completion('what is the max rental price?');
-    //   expect(dataResponse, contains('5602'));
-    // });
-
-    //   test('Streaming completion', () async {
-    //     final mind = await client.minds.create(
-    //       name: mindName2,
-    //       modelName: "openai",
-    //       datasources: [tempDatasource],
-    //     );
-
-    //     bool success = false;
-    //     await for (var chunk in mind.completion('say hello', stream: true)) {
-    //       if (chunk.content.toLowerCase().contains('hola')) {
-    //         success = true;
-    //       }
-    //     }
-    //     expect(success, isTrue);
-    //   });
+    //  });
   });
 }

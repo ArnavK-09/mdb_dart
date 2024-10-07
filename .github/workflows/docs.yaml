@@ -1,0 +1,30 @@
+name: 🕸 Deploy Dart Docs on Github Pages...
+
+on:
+  workflow_dispatch:
+  # push:
+  #   branches:
+  #     - main 
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Dart
+      uses: dart-lang/setup-dart@v1
+
+    - name: Install dependencies
+      run: dart pub get
+
+    - name: Generate documentation
+      run: dart doc
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./doc/api  
