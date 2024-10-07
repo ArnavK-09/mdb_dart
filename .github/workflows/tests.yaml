@@ -23,5 +23,8 @@ jobs:
       - name: Get dependencies
         run: dart pub get
 
+      - name: Create .env file
+        run: echo "API_KEY=$API_KEY" > .env
+
       - name: Run tests
-        run: echo $API_KEY; dart test
+        run: dart test
