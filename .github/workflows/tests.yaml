@@ -1,6 +1,7 @@
 name: 🧪 Run dart tests...
 
 on:
+  workflow_dispatch:
   push:
     branches: ["*"]
   pull_request:
@@ -23,3 +24,5 @@ jobs:
 
       - name: Run tests
         run: dart test
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
