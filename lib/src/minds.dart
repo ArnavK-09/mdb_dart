@@ -124,7 +124,7 @@ class Mind {
     if (promptTemplate != null) {
       data['parameters']['prompt_template'] = promptTemplate;
     }
-    
+
     await api.patch(
       '/projects/$project/minds/${this.name}',
       data,
@@ -477,7 +477,7 @@ class Minds {
   /// ```dart
   /// final newMind = await client.minds.create(
   ///   name: 'demo',
-  ///   modelName: 'openai',
+  ///   modelName: 'gpt-4o',
   ///   provider: 'openai',
   ///   promptTemplate: 'Answer in German',
   ///   datasources: ["datasource_name"],

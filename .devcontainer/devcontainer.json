@@ -7,7 +7,7 @@
 	"customizations": {
 	  "vscode": {
 		"extensions": [
-		  "Dart-Code.dart-code",
+		  "Dart-Code.dart-code"
 		]
 	  }
 	}

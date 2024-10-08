@@ -1,7 +1,7 @@
 name: mdb_dart
 description: MindsDB SDK for Dart for efficient interaction.
 version: 0.0.1
-# repository: https://github.com/my_org/my_repo
+repository: https://github.com/ArnavK-09/mdb_dart
 
 environment:
   sdk: ^3.5.2
