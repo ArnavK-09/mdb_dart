@@ -42,11 +42,11 @@ class RestAPI {
     this.baseUrl = '${baseUrl.replaceAll(RegExp(r'/+$'), '')}/api';
   }
 
-  /// ### _headers
+  /// ### headers
   /// Generates the necessary HTTP headers for API requests.
   ///
   /// Returns a [Map] containing the 'Authorization' and 'Content-Type' headers.
-  Map<String, String> _headers() {
+  Map<String, String> headers() {
     return {
       'Authorization': 'Bearer $apiKey',
       'Content-Type': 'application/json'
@@ -58,7 +58,7 @@ class RestAPI {
   /// Throws an [Exception] if the response status indicates an error.
   Future<http.Response> get(String url) async {
     final response =
-        await http.get(Uri.parse('$baseUrl$url'), headers: _headers());
+        await http.get(Uri.parse('$baseUrl$url'), headers: headers());
     _raiseForStatus(response);
     return response;
   }
@@ -68,7 +68,7 @@ class RestAPI {
   /// Throws an [Exception] if the response status indicates an error.
   Future<http.Response> delete(String url) async {
     final response =
-        await http.delete(Uri.parse('$baseUrl$url'), headers: _headers());
+        await http.delete(Uri.parse('$baseUrl$url'), headers: headers());
     _raiseForStatus(response);
     return response;
   }
@@ -76,10 +76,15 @@ class RestAPI {
   /// Sends a POST request to the specified [url] with the provided [data].
   ///
   /// Throws an [Exception] if the response status indicates an error.
-  Future<http.Response> post(String url, Map<String, dynamic> data) async {
+  Future<http.Response> post(String url, Map<String, dynamic> data,
+      {bool useOnlyBareHost = false}) async {
+    var targetUrl = Uri.parse('$baseUrl$url');
+    if (useOnlyBareHost) {
+      targetUrl = Uri.parse('${baseUrl.replaceAll("/api", "")}$url');
+    }
     final response = await http.post(
-      Uri.parse('$baseUrl$url'),
-      headers: _headers(),
+      targetUrl,
+      headers: headers(),
       body: jsonEncode(data),
     );
     _raiseForStatus(response);
@@ -92,7 +97,7 @@ class RestAPI {
   Future<http.Response> patch(String url, Map<String, dynamic> data) async {
     final response = await http.patch(
       Uri.parse('$baseUrl$url'),
-      headers: _headers(),
+      headers: headers(),
       body: jsonEncode(data),
     );
     _raiseForStatus(response);

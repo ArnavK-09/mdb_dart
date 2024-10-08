@@ -1,10 +1,8 @@
 import 'package:mdb_dart/mdb_dart.dart' as minds;
 import 'package:dartenv/dartenv.dart';
 
-const mindName = "demo";
-const mindName2 = "demo2";
 final tempDatasource = minds.DatabaseConfig(
-  name: 'another_example_ds',
+  name: 'dss',
   description: minds.demoDatasourceConfigForTesting.description,
   engine: minds.demoDatasourceConfigForTesting.engine,
   connectionData: minds.demoDatasourceConfigForTesting.connectionData,
@@ -12,35 +10,55 @@ final tempDatasource = minds.DatabaseConfig(
 
 void main() async {
   var client = minds.Client(env("API_KEY"));
-  await client.datasources.create(tempDatasource, replace: true);
 
-  final mind1 = await client.minds.create(
-      name: mindName,
-      modelName: "openai",
-      datasources: [tempDatasource],
-      replace: true);
+  for (var mind in (await client.minds.list())) {
+    print(mind.name);
+    client.minds.drop(mind.name);
+  }
 
-  final mind2 = await client.minds.create(
-      name: mindName2,
-      modelName: "openai",
-      datasources: [tempDatasource],
-      replace: true);
+  // final mind1 = await client.minds.create(
+  //     name: "openai",
+  //     datasources: [minds.demoDatasourceConfigForTesting],
+  //     replace: true
+  //     );
+
+  //     print(mind1);
+  // final mind1 = await client.minds.get("openai");
+  // mind1.parameters.addAll({"temperature": "2"});
+  // final res = await mind1.streamCompletion("say this is a test");
+
+  // await for (var response in res) {
+  //   print(response.choices.first.delta.content?.first?.text);
+  // }
+//
+  // String userMessage = "list datasource items length";
+
+  // String userMessage = "1+1";
+  // final response = await mind1.completion(userMessage);
+  // print('Chat completion ID: ${response.id}');
+  // print(
+  //     'Generated response: ${response.choices.first.message.content?.first.text}');
+
+  // await for (var response in (await mind1.streamCompletion(userMessage))) {
+  //   print(
+  //       'Chunk received: ${response.choices.first.delta.content?.first?.text} \n');
+  // }
 
   // expect(mind1.name, mindName);
   // expect(mind2.name, mindName2);
 
-  print("mind 1  ${mind1.name} is $mindName");
-  print("mind 2 ${mind2.name} is $mindName");
+  // print("mind 1  ${mind1.name} is $mindName");
+  // print("mind 2 ${mind2.name} is $mindName");
 
-  // await client.minds.drop(mindName2);
+  // // await client.minds.drop(mindName2);
 
-  var fetchedMind1 = await client.minds.get(mindName);
-  fetchedMind1 = await fetchedMind1.update(
-    name: mindName2,
-    datasources: [tempDatasource],
-  );
+  // var fetchedMind1 = await client.minds.get(mindName);
+  // fetchedMind1 = await fetchedMind1.update(
+  //   name: mindName2,
+  //   datasources: [tempDatasource],
+  // );
 
-  print("${fetchedMind1.name} updated from $mindName to $mindName2");
+  // print("${fetchedMind1.name} updated from $mindName to $mindName2");
 
   // expect(fetchedMind1.name, mindName2);
 
@@ -52,8 +70,8 @@ void main() async {
   // expect(() async => await client.minds.get(mindName),
   //     throwsA(isA<ObjectNotFound>()));
 
-  final updatedMind = await client.minds.get(mindName2);
-  print("${updatedMind.datasources.length} is length of updated $mindName2");
+  // final updatedMind = await client.minds.get(mindName2);
+  // print("${updatedMind.datasources.length} is length of updated $mindName2");
   // expect(updatedMind.datasources?.length, 1);
 
 /*
