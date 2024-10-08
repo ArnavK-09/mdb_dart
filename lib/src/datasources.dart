@@ -18,14 +18,13 @@ class DatabaseConfig {
   /// The [name], [engine], and [description] are required parameters.
   /// [connectionData] defaults to an empty map if not provided.
   /// [tables] defaults to an empty list if not provided.
-  DatabaseConfig({
+  const DatabaseConfig({
     required this.name,
     required this.engine,
     required this.description,
-    Map<String, dynamic>? connectionData,
-    List<String>? tables,
-  })  : connectionData = connectionData ?? {},
-        tables = tables ?? [];
+    this.connectionData = const {},
+    this.tables = const [],
+  });
 
   /// ### toJson
   /// Converts the [DatabaseConfig] instance to a JSON-compatible map.
@@ -51,13 +50,13 @@ class Datasource extends DatabaseConfig {
   ///
   /// The [name], [engine], and [description] are required parameters.
   /// [connectionData] and [tables] are optional and default to inherited values.
-  Datasource({
+  const Datasource({
     required super.name,
     required super.engine,
     required super.description,
     super.connectionData,
     super.tables,
-  }) : super();
+  });
 }
 
 /// A class for managing database datasources using the [Client].
@@ -202,7 +201,7 @@ class Datasources {
     final data = jsonDecode(response.body);
 
     if (data['engine'] == null) {
-      throw ValueError('Wrong type of datasource: $name');
+      throw ValueError('Invalid datasource type: $name');
     }
 
     return Datasource(
@@ -247,7 +246,7 @@ class Datasources {
 /// Represents a sample database configuration for a datasource named 'example_ds',
 /// using PostgreSQL as the database engine. Contains connection details for accessing
 /// the 'House Sales Data' database.
-final demoDatasourceConfigForTesting = DatabaseConfig(
+const demoDatasourceConfigForTesting = DatabaseConfig(
   name: 'example_ds',
   description: 'House Sales Data',
   engine: 'postgres',

@@ -29,11 +29,8 @@ void main() {
     });
 
     test('Creating mind', () async {
-      final res = await client.minds.create(
-          name: mindName,
-          modelName: "openai",
-          datasources: [tempDatasource],
-          replace: true);
+      final res = await client.minds
+          .create(name: mindName, datasources: [tempDatasource], replace: true);
       expect(res, isA<minds.Mind>());
     });
 
@@ -62,17 +59,11 @@ void main() {
     });
 
     test('Creating and managing multiple minds', () async {
-      final mind1 = await client.minds.create(
-          name: mindName,
-          modelName: "openai",
-          datasources: [tempDatasource],
-          replace: true);
+      final mind1 = await client.minds
+          .create(name: mindName, datasources: [tempDatasource], replace: true);
 
       final mind2 = await client.minds.create(
-          name: mindName2,
-          modelName: "openai",
-          datasources: [tempDatasource],
-          replace: true);
+          name: mindName2, datasources: [tempDatasource], replace: true);
 
       expect(mind1.name, mindName);
       expect(mind2.name, mindName2);
@@ -106,15 +97,30 @@ void main() {
       expect(fetchedMind.datasources.length, 1);
     });
 
+    test('Handling completion requests', () async {
+      final mind = await client.minds.get(mindName2);
+      mind.parameters.addAll({"temperature": "0"});
+      String userMessage = "1+1";
+      final response = await mind.completion(userMessage);
+      String? res = response.choices.first.message.content?.first.text;
+      expect(res!.contains("2"), isTrue);
+    });
+
+    test('Streaming chat responses', () async {
+      final mind = await client.minds.get(mindName2);
+      String userMessage = "hello";
+      await for (var response in (await mind.streamCompletion(userMessage))) {
+        final res = (response.choices.first.delta.content?.first?.text);
+        expect(res?.length, greaterThanOrEqualTo(0));
+      }
+    });
+
     test('Dropping multiple minds', () async {
-      // expect(() async => await client.minds.drop(mindName2), returnsNormally);
-      // expect(() async => await client.minds.drop(mindName),
-      // throwsA(isA<ObjectNotFound>()));
+      expect(() async => await client.minds.drop(mindName2), returnsNormally);
+      expect(() async => await client.minds.drop(mindName),
+          throwsA(isA<ObjectNotFound>()));
       expect(() async => await client.datasources.drop(tempDatasource.name),
           returnsNormally);
     });
-
-    // test('Handling completion requests', () async {
-    //  });
   });
 }
