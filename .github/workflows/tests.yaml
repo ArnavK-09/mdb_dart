@@ -4,8 +4,10 @@ on:
   workflow_dispatch:
   push:
     branches: ["*"]
+    patchs: ["lib/**"]
   pull_request:
     branches: ["*"]
+    patchs: ["lib/**"]
 
 env:
   API_KEY: ${{ secrets.API_KEY }}
