@@ -44,6 +44,7 @@
 > Add `mdb_dart` to your `pubspec.yaml` file:
 
 ###### pubspec.yaml
+
 ```yaml
 dependencies:
   mdb_dart: ^0.0.1
@@ -52,6 +53,7 @@ dependencies:
 > Then run:
 
 ###### bash
+
 ```bash
 dart pub get
 ```
@@ -71,32 +73,35 @@ void main() async {
 
 ---
 
-## 📘 API Reference 
+## 📘 API Reference
 
-### Client 
-| Method | Description | 
-|--------|-------------| 
-| [`Client(String apiKey, {String? baseURL})`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/client.dart#L8) | Creates a new client instance | 
+### Client
 
-### Datasources 
-| Method | Description | 
-|--------|-------------| 
-| [`list()`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L15) | List all datasources | 
-| [`get(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L26) | Get a specific datasource | 
-| [`create(DatabaseConfig dsConfig, {bool replace = false})`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L38) | Create a new datasource | 
-| [`drop(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L50) | Delete a datasource | 
+| Method                                                                                                                | Description                   |
+| --------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
+| [`Client(String apiKey, {String? baseURL})`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/client.dart#L32) | Creates a new client instance |
 
-### Minds 
-| Method | Description | 
-|--------|-------------| 
-| [`list()`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L15) | List all minds | 
-| [`get(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L26) | Get a specific mind | 
-| [`create({required String name, ...})`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L38) | Create a new mind | 
-| [`drop(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L50) | Delete a mind | 
+### Datasources
+
+| Method                                                                                                                                     | Description               |
+| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------- |
+| [`list()`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L154)                                                  | List all datasources      |
+| [`get(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L198)                                        | Get a specific datasource |
+| [`create(DatabaseConfig dsConfig, {bool replace = false})`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L118) | Create a new datasource   |
+| [`drop(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L239)                                       | Delete a datasource       |
+
+### Minds
+
+| Method                                                                                                           | Description         |
+| ---------------------------------------------------------------------------------------------------------------- | ------------------- |
+| [`list()`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L404)                              | List all minds      |
+| [`get(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L437)                    | Get a specific mind |
+| [`create({required String name, ...})`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L488) | Create a new mind   |
+| [`drop(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L552)                   | Delete a mind       |
 
 ## 🌟 Usage Examples
 
-### 💿 Managing ` Datasources `
+### 💿 Managing `Datasources`
 
 > #### List Datasources
 
@@ -141,7 +146,7 @@ await client.datasources.drop('my_postgres_db');
 print('Datasource deleted successfully');
 ```
 
-### 🧠 Managing ` Minds `
+### 🧠 Managing `Minds`
 
 > #### List Minds
 
