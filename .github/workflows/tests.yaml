@@ -7,11 +7,12 @@ on:
   pull_request:
     branches: ["*"]
 
+env:
+  API_KEY: ${{ secrets.API_KEY }}
+
 jobs:
   test:
     runs-on: ubuntu-latest
-    env:
-      API_KEY: ${{ secrets.API_KEY }}
     steps:
       - name: Check out code
         uses: actions/checkout@v4
@@ -22,7 +23,8 @@ jobs:
       - name: Get dependencies
         run: dart pub get
 
+      - name: Create .env file
+        run: echo "API_KEY=$API_KEY" > .env
+
       - name: Run tests
         run: dart test
-        env:
-          API_KEY: ${{ secrets.API_KEY }}

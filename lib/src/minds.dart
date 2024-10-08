@@ -124,7 +124,7 @@ class Mind {
     if (promptTemplate != null) {
       data['parameters']['prompt_template'] = promptTemplate;
     }
-
+    
     await api.patch(
       '/projects/$project/minds/${this.name}',
       data,
