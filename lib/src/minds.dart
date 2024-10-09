@@ -3,10 +3,10 @@ import 'dart:async';
 import 'package:http/http.dart';
 import 'rest_api.dart';
 import 'package:dart_openai/dart_openai.dart' as dart_openai;
-import 'exceptions.dart' as exc;
 import 'datasources.dart';
 import "package:mdb_dart/mdb_dart.dart" as mdb_dart;
 import 'package:http/http.dart' as http;
+import 'exceptions.dart';
 
 /// Default template for prompts used in ai queries.
 const String defaultPromptTemplate =
@@ -200,7 +200,7 @@ class Mind {
     } else if (datasource is String) {
       datasourceName = datasource;
     } else {
-      throw exc.ValueError('Unknown type of datasource: $datasource');
+      throw ValueError('Unknown type of datasource: $datasource');
     }
 
     await api
@@ -574,7 +574,7 @@ class Minds {
       try {
         await client.datasources.get(ds.name);
       } catch (e) {
-        if (e is exc.ObjectNotFound) {
+        if (e is ObjectNotFound) {
           await client.datasources.create(ds);
         } else {
           rethrow;
@@ -584,7 +584,7 @@ class Minds {
     } else if (ds is String) {
       return ds;
     } else {
-      throw exc.ValueError('Unknown type of datasource: $ds');
+      throw ValueError('Unknown type of datasource: $ds');
     }
   }
 }

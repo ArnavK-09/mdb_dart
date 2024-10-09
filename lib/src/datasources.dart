@@ -193,7 +193,7 @@ class Datasources {
   ///   print('Error: $e');
   /// }
   /// ```
-  /// This example retrieves the datasource named 'example_ds' and prints its [name] and [engine].
+  /// This example retrieves the datasource named 'example_ds' and prints its [name] and engine.
   /// If the [Datasource] is not found or has an invalid engine, it will throw [Exception].
   Future<Datasource> get(String name) async {
     final response = await client.api.get('/datasources/$name');

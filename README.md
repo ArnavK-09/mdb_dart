@@ -5,12 +5,17 @@
 </p>
 <br /><br />
 <p align="center">
+<a href="https://pub.dev/packages/mdb_dart">
 <img alt="pub verion" src="https://img.shields.io/pub/v/mdb_dart.svg">
+</a>
+    <a href="https://pub.dev/packages/mdb_dart">
 <img alt="repo size" src="https://img.shields.io/github/repo-size/ArnavK-09/mdb_dart?color=green">
-<img alt="repo release" src="https://img.shields.io/github/v/release/ArnavK-09/mdb_dart">
-<img alt="Tests" src="https://github.com/ArnavK-09/mdb_dart/actions/workflows/tests.yaml/badge.svg">
-<img alt="license" src="https://img.shields.io/badge/License-Mozilla%20Public%20License%202.0-orange.svg">
-
+        </a>    <a href="https://github.com/ArnavK-09/mdb_dart/releases">
+<img alt="repo release" src="https://img.shields.io/github/v/release/ArnavK-09/mdb_dart">   </a> 
+      <a href="https://github.com/ArnavK-09/mdb_dart/actions/workflows/tests.yaml">
+<img alt="Tests" src="https://github.com/ArnavK-09/mdb_dart/actions/workflows/tests.yaml/badge.svg"> </a> 
+          <a href="https://github.com/ArnavK-09/mdb_dart/blob/main/LICENSE">
+<img alt="license" src="https://img.shields.io/badge/License-Mozilla%20Public%20License%202.0-orange.svg"> </a> 
 </p>
 
 > [!NOTE]
@@ -56,21 +61,12 @@
 
 ## 🎪 Installation
 
-> Add `mdb_dart` to your `pubspec.yaml` file:
-
-###### pubspec.yaml
-
-```yaml
-dependencies:
-  mdb_dart: ^0.0.1
-```
-
-> Then run:
+> Add **[`mdb_dart`](https://pub.dev/packages/mdb_dart)** to your project!
 
 ###### bash
 
 ```bash
-dart pub get
+dart pub add mdb_dart
 ```
 
 ## 🏁 Getting Started

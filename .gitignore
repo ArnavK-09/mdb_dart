@@ -8,4 +8,4 @@ pubspec.lock
 
 # Extras
 .env
-doc/api/
+doc
