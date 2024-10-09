@@ -230,7 +230,7 @@ print('Mind deleted successfully');
 ```dart
 Mind mind = await client.minds.get('my_predictor');
 final completion = await mind.completion('What will be the stock price tomorrow?');
-print('Prediction: ${completion.choices.first.message.content}');
+print('Prediction: ${completion.choices.first.message.content?.first.text}');
 ```
 
 > #### Streaming Completions
@@ -239,7 +239,7 @@ print('Prediction: ${completion.choices.first.message.content}');
 Mind mind = await client.minds.get('my_predictor');
 final stream = await mind.streamCompletion('Explain quantum computing');
 await for (var chunk in stream) {
-  print('Chunk: ${chunk.choices.first.delta.content}');
+  print('Chunk: ${chunk.choices.first.delta.content?.first?.text}');
 }
 ```
 

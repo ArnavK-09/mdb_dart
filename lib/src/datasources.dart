@@ -7,10 +7,19 @@ import 'package:mdb_dart/src/exceptions.dart';
 /// Contains details such as the database [name], [engine], [description],
 /// connection parameters, and the list of [tables].
 class DatabaseConfig {
+  /// The name of the database.
   final String name;
+
+  /// The database engine.
   final String engine;
+
+  /// A brief description of the database.
   final String description;
+
+  /// Connection parameters for the database.
   final Map<String, dynamic> connectionData;
+
+  /// A list of table names associated with the database.
   final List<String> tables;
 
   /// Creates a new [DatabaseConfig] instance.

@@ -1,1 +1,1 @@
-dart run
+dart run main.dart

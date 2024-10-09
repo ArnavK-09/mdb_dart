@@ -30,10 +30,19 @@ import 'package:mdb_dart/mdb_dart.dart';
 /// // Now you can use client.datasources and client.minds to interact with the API.
 /// ```
 class Client {
+  /// An instance of the [RestAPI] class for making API calls.
   late final RestAPI api;
+
+  /// An instance of the [Datasources] class for managing datasources.
   late final Datasources datasources;
+
+  /// An instance of the [Minds] class for interacting with minds.
   late final Minds minds;
 
+  /// Creates a new [Client] instance with the specified API key and optional base URL.
+  ///
+  /// The [apiKey] is required for authenticating with the MindsDB API.
+  /// The [baseURL] is optional and defaults to "https://mdb.ai".
   Client(String apiKey, {String? baseURL = "https://mdb.ai"}) {
     api = RestAPI(apiKey, baseURL!);
     datasources = Datasources(this);
