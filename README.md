@@ -34,12 +34,27 @@
 
 ## 🚀 Features
 
-- 🔐 Secure API authentication
-- 📊 Manage data sources with ease
-- 🧠 Create and control AI models (Minds)
-- 🔄 Seamless integration with MindsDB API
-- 🛡️ Robust error handling
-- 📡 Real-time streaming support
+Here’s an expanded version of the features section, incorporating new features and varied wording:
+
+## 🚀 Features
+
+- **🔐 Secure API Authentication**  
+  Safeguard your application with cutting-edge authentication methods that ensure your connection to the MindsDB API remains protected and confidential. Experience peace of mind while accessing advanced AI functionalities.
+
+- **📊 Intuitive Data Source Management**  
+  Easily manage and configure your data sources with sdk. Add, modify, or remove data connections effortlessly, allowing your AI models to access the most relevant and up-to-date information.
+
+- **🧠 Tailored AI Model Creation (MindsDB AI)**  
+  Design bespoke AI models that suit your specific requirements. With our platform, you can create, customize, and optimize Minds that deliver personalized responses, making your applications smarter and more intuitive.
+
+- **🔄 Effortless MindsDB API Integration**  
+  Experience a hassle-free integration with the MindsDB API, enabling you to tap into the full spectrum of AI capabilities quickly. Connect your systems and workflows seamlessly, enhancing your application’s functionality.
+
+- **📡 Real-time Interaction Capabilities**  
+  Engage your users in real-time with interactive responses! Our real-time streaming support enables you to build applications that deliver immediate feedback, making conversations more dynamic and engaging.
+
+- **📦 Modular Architecture**  
+  Benefit from a flexible, modular architecture that allows you to extend and customize the functionality of your application easily. Add new features and capabilities as your project evolves, ensuring long-term adaptability.
 
 ## 🎪 Installation
 
@@ -256,3 +271,9 @@ This project is licensed under the <code> Mozilla Public License 2.0 </code> - s
 <p align="center">
     <strong>If you find this project helpful, please give it a ⭐ on GitHub!</strong>
 </p>
+
+---
+
+> [!WARNING]
+>
+> _This repository is heavily influenced by the [minds_python_sdk](https://github.com/mindsdb/minds_python_sdk) and mirrors its structure and functionality._

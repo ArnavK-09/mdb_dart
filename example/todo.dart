@@ -12,11 +12,6 @@ void main() async {
   var client = Client(env("API_KEY"));
 
 
-Mind mind = await client.minds.get('my_predictor');
-final completion = await mind.completion('What will be the stock price tomorrow?');
-
-
-
   // for (var mind in (await client.minds.list())) {
   //   print(mind.name);
   //   client.minds.drop(mind.name);
