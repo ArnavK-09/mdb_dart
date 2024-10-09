@@ -34,10 +34,6 @@
 
 ## 🚀 Features
 
-Here’s an expanded version of the features section, incorporating new features and varied wording:
-
-## 🚀 Features
-
 - **🔐 Secure API Authentication**  
   Safeguard your application with cutting-edge authentication methods that ensure your connection to the MindsDB API remains protected and confidential. Experience peace of mind while accessing advanced AI functionalities.
 
