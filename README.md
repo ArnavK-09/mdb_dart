@@ -20,7 +20,7 @@
 
 > [!NOTE]
 >
-> A powerful and intuitive **Dart SDK** for interacting with the **MindsDB API**. Seamlessly integrate machine learning capabilities into your Dart applications!
+> A powerful and intuitive **Dart SDK** for interacting with the **MindsDB AI API**. Seamlessly integrate machine learning capabilities into your Dart applications!
 
 ## 📚 Table of Contents
 
