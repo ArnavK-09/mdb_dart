@@ -6,8 +6,10 @@
 <br /><br />
 <p align="center">
 <img alt="pub verion" src="https://img.shields.io/pub/v/mdb_dart.svg">
+<img alt="repo size" src="https://img.shields.io/github/repo-size/ArnavK-09/mdb_dart?color=green">
+<img alt="repo release" src="https://img.shields.io/github/v/release/ArnavK-09/mdb_dart">
 <img alt="Tests" src="https://github.com/ArnavK-09/mdb_dart/actions/workflows/tests.yaml/badge.svg">
-<img alt="license" src="https://img.shields.io/badge/License-Mozilla%20Public%20License%202.0-yellow.svg">
+<img alt="license" src="https://img.shields.io/badge/License-Mozilla%20Public%20License%202.0-orange.svg">
 
 </p>
 
