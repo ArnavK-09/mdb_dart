@@ -1,20 +1,26 @@
-import 'package:mdb_dart/mdb_dart.dart' as minds;
+import 'package:mdb_dart/mdb_dart.dart';
 import 'package:dartenv/dartenv.dart';
 
-final tempDatasource = minds.DatabaseConfig(
+final tempDatasource = DatabaseConfig(
   name: 'dss',
-  description: minds.demoDatasourceConfigForTesting.description,
-  engine: minds.demoDatasourceConfigForTesting.engine,
-  connectionData: minds.demoDatasourceConfigForTesting.connectionData,
+  description: demoDatasourceConfigForTesting.description,
+  engine: demoDatasourceConfigForTesting.engine,
+  connectionData: demoDatasourceConfigForTesting.connectionData,
 );
 
 void main() async {
-  var client = minds.Client(env("API_KEY"));
+  var client = Client(env("API_KEY"));
 
-  for (var mind in (await client.minds.list())) {
-    print(mind.name);
-    client.minds.drop(mind.name);
-  }
+
+Mind mind = await client.minds.get('my_predictor');
+final completion = await mind.completion('What will be the stock price tomorrow?');
+
+
+
+  // for (var mind in (await client.minds.list())) {
+  //   print(mind.name);
+  //   client.minds.drop(mind.name);
+  // }
 
   // final mind1 = await client.minds.create(
   //     name: "openai",

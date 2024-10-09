@@ -18,12 +18,14 @@
 ## 📚 Table of Contents
 
 - [🚀 Features](#-features)
-- [🛠️ Installation](#️-installation)
+- [🎪 Installation](#-installation)
 - [🏁 Getting Started](#-getting-started)
 - [📘 API Reference](#-api-reference)
   - [Client](#client)
   - [Datasources](#datasources)
   - [Minds](#minds)
+  - [Mind](#mind)
+  - [Exceptions](#exceptions)
 - [🌟 Usage Examples](#-usage-examples)
 - [🤝 Contributing](#-contributing)
 - [📄 License](#-license)
@@ -39,7 +41,7 @@
 - 🛡️ Robust error handling
 - 📡 Real-time streaming support
 
-## 🛠️ Installation
+## 🎪 Installation
 
 > Add `mdb_dart` to your `pubspec.yaml` file:
 
@@ -75,29 +77,59 @@ void main() async {
 
 ## 📘 API Reference
 
-### Client
+### [Client](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/client.dart#L32)
 
-| Method                                                                                                                | Description                   |
-| --------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
-| [`Client(String apiKey, {String? baseURL})`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/client.dart#L32) | Creates a new client instance |
+| Method/Property                                                                                      | Description                   |
+| ---------------------------------------------------------------------------------------------------- | ----------------------------- |
+| [`RestAPI api`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/client.dart#L38)             | Instance for making API calls |
+| [`Datasources datasources`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/client.dart#L39) | Manages data sources          |
+| [`Minds minds`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/client.dart#L40)             | Manages minds (AI models)     |
 
-### Datasources
+### [Datasources](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L65)
 
-| Method                                                                                                                                     | Description               |
-| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------- |
-| [`list()`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L154)                                                  | List all datasources      |
-| [`get(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L198)                                        | Get a specific datasource |
-| [`create(DatabaseConfig dsConfig, {bool replace = false})`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L118) | Create a new datasource   |
-| [`drop(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L239)                                       | Delete a datasource       |
+| Method/Property                                                                                                                                    | Description                          |
+| -------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
+| [`list()`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L154)                                                          | List all datasources                 |
+| [`get(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L198)                                                | Get a specific datasource            |
+| [`create(DatabaseConfig dsConfig, {bool replace = false})`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L118)         | Create a new datasource              |
+| [`drop(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L239)                                               | Delete a datasource                  |
+| [`DatabaseConfig(name, engine, description, connectionData, tables)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L9) | Configuration details for a database |
 
-### Minds
+### [Minds](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L377)
 
-| Method                                                                                                           | Description         |
-| ---------------------------------------------------------------------------------------------------------------- | ------------------- |
-| [`list()`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L404)                              | List all minds      |
-| [`get(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L437)                    | Get a specific mind |
-| [`create({required String name, ...})`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L488) | Create a new mind   |
-| [`drop(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L552)                   | Delete a mind       |
+| Method/Property                                                                                                                                               | Description                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
+| [`list()`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L404)                                                                           | List all minds (AI models)     |
+| [`get(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L437)                                                                 | Get a specific mind (AI model) |
+| [`create({required String name, modelName, provider, promptTemplate, datasources})`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L488) | Create a new mind              |
+| [`drop(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L552)                                                                | Delete a mind                  |
+
+Certainly! Here's how you can structure the API reference table for the `Mind` class in your README:
+
+### [Mind](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L37)
+
+| Method/Property                                                                                                                                                   | Description                                                               |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| [`update({String? name, modelName, provider, promptTemplate, datasources, parameters})`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L101) | Updates the properties of the mind.                                       |
+| [`addDatasource(dynamic datasource)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L161)                                                    | Adds a new datasource to the mind.                                        |
+| [`delDatasource(dynamic datasource)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L195)                                                    | Deletes a specific datasource from the mind.                              |
+| [`completion(String message)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L238)                                                           | Sends a chat message to the Mind API and retrieves a completion response. |
+| [`streamCompletion(String message)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L286)                                                     | Streams chat completions from the Mind API based on a user's message.     |
+| [`fromJson(Client client, Map<String, dynamic> json)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L353)                                   | Creates a new instance of Mind from a JSON map.                           |
+
+### Exceptions
+
+| Exception                                                                                                                                         | Description                                                 |
+| ------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| [`ObjectNotFound([String message = 'Object not found.'])`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/exceptions.dart#L4)            | Thrown when a requested object cannot be found.             |
+| [`ObjectAlreadyExists([String message = 'Object already exists.'])`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/exceptions.dart#L15) | Thrown when trying to create an object that already exists. |
+| [`ObjectNotSupported([String message = 'Object not supported.'])`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/exceptions.dart#L26)   | Thrown when an unsupported operation is attempted.          |
+| [`Forbidden([String message = 'Access forbidden.'])`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/exceptions.dart#L37)                | Thrown when access is forbidden.                            |
+| [`Unauthorized([String message = 'Unauthorized access.'])`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/exceptions.dart#L48)          | Thrown when access is unauthorized.                         |
+| [`UnknownError([String message = 'An unknown error occurred.'])`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/exceptions.dart#L59)    | Thrown for unspecified errors.                              |
+| [`ValueError(String message)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/exceptions.dart#L70)                                       | Thrown when a value is invalid or out of range.             |
+
+---
 
 ## 🌟 Usage Examples
 
@@ -106,7 +138,7 @@ void main() async {
 > #### List Datasources
 
 ```dart
-final datasources = await client.datasources.list();
+List<Datasource> datasources = await client.datasources.list();
 for (var ds in datasources) {
   print('Datasource: ${ds.name}');
 }
@@ -135,7 +167,7 @@ print('Created datasource: ${newDatasource.name}');
 > #### Get a Datasource
 
 ```dart
-final datasource = await client.datasources.get('my_postgres_db');
+Datasource datasource = await client.datasources.get('my_postgres_db');
 print('Datasource engine: ${datasource.engine}');
 ```
 
@@ -151,7 +183,7 @@ print('Datasource deleted successfully');
 > #### List Minds
 
 ```dart
-final minds = await client.minds.list();
+List<Mind> minds = await client.minds.list();
 for (var mind in minds) {
   print('Mind: ${mind.name}');
 }
@@ -173,7 +205,7 @@ print('Created mind: ${newMind.name}');
 > #### Get a Mind
 
 ```dart
-final mind = await client.minds.get('my_predictor');
+Mind mind = await client.minds.get('my_predictor');
 print('Mind model: ${mind.modelName}');
 ```
 
@@ -187,7 +219,7 @@ print('Mind deleted successfully');
 > #### Using a Mind for Predictions
 
 ```dart
-final mind = await client.minds.get('my_predictor');
+Mind mind = await client.minds.get('my_predictor');
 final completion = await mind.completion('What will be the stock price tomorrow?');
 print('Prediction: ${completion.choices.first.message.content}');
 ```
@@ -195,7 +227,7 @@ print('Prediction: ${completion.choices.first.message.content}');
 > #### Streaming Completions
 
 ```dart
-final mind = await client.minds.get('my_predictor');
+Mind mind = await client.minds.get('my_predictor');
 final stream = await mind.streamCompletion('Explain quantum computing');
 await for (var chunk in stream) {
   print('Chunk: ${chunk.choices.first.delta.content}');
