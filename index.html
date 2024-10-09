@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="mdb_dart API docs, for the Dart programming language.">
+  <title>mdb_dart - Dart API docs</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li class="self-crumb">mdb_dart package</li>
+  </ol>
+  <div class="self-name">mdb_dart</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button" title="Toggle brightness">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        dark_mode
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        light_mode
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      
+<section class="desc markdown">
+  <h1 align="center">🎯 Minds Dart 🎯</h1>
+<br>
+<p align="center">
+    <img alt="hero" width="450" src="https://cdn.prod.website-files.com/62a8755be8bcc86e6307def8/634aea01a7ad04c1c66b19c2_Mindsdb-Core%20logo%20white.png">
+</p>
+<br><br>
+<p align="center">
+<img alt="pub verion" src="https://img.shields.io/pub/v/mdb_dart.svg">
+<img alt="repo size" src="https://img.shields.io/github/repo-size/ArnavK-09/mdb_dart?color=green">
+<img alt="repo release" src="https://img.shields.io/github/v/release/ArnavK-09/mdb_dart">
+<img alt="Tests" src="https://github.com/ArnavK-09/mdb_dart/actions/workflows/tests.yaml/badge.svg">
+<img alt="license" src="https://img.shields.io/badge/License-Mozilla%20Public%20License%202.0-orange.svg">
+</p>
+<div class="markdown-alert markdown-alert-note">
+<p class="markdown-alert-title">Note</p>
+<p>A powerful and intuitive <strong>Dart SDK</strong> for interacting with the <strong>MindsDB API</strong>. Seamlessly integrate machine learning capabilities into your Dart applications!</p>
+</div>
+<h2 id="-table-of-contents">📚 Table of Contents</h2>
+<ul>
+<li><a href="#-features">🚀 Features</a></li>
+<li><a href="#-installation">🎪 Installation</a></li>
+<li><a href="#-getting-started">🏁 Getting Started</a></li>
+<li><a href="#-api-reference">📘 API Reference</a>
+<ul>
+<li><a href="#client">Client</a></li>
+<li><a href="#datasources">Datasources</a></li>
+<li><a href="#minds">Minds</a></li>
+<li><a href="#mind">Mind</a></li>
+<li><a href="#exceptions">Exceptions</a></li>
+</ul>
+</li>
+<li><a href="#-usage-examples">🌟 Usage Examples</a></li>
+<li><a href="#-contributing">🤝 Contributing</a></li>
+<li><a href="#-license">📄 License</a></li>
+</ul>
+<hr>
+<h2 id="-features">🚀 Features</h2>
+<ul>
+<li>
+<p><strong>🔐 Secure API Authentication</strong><br>
+Safeguard your application with cutting-edge authentication methods that ensure your connection to the MindsDB API remains protected and confidential. Experience peace of mind while accessing advanced AI functionalities.</p>
+</li>
+<li>
+<p><strong>📊 Intuitive Data Source Management</strong><br>
+Easily manage and configure your data sources with sdk. Add, modify, or remove data connections effortlessly, allowing your AI models to access the most relevant and up-to-date information.</p>
+</li>
+<li>
+<p><strong>🧠 Tailored AI Model Creation (MindsDB AI)</strong><br>
+Design bespoke AI models that suit your specific requirements. With our platform, you can create, customize, and optimize Minds that deliver personalized responses, making your applications smarter and more intuitive.</p>
+</li>
+<li>
+<p><strong>🔄 Effortless MindsDB API Integration</strong><br>
+Experience a hassle-free integration with the MindsDB API, enabling you to tap into the full spectrum of AI capabilities quickly. Connect your systems and workflows seamlessly, enhancing your application’s functionality.</p>
+</li>
+<li>
+<p><strong>📡 Real-time Interaction Capabilities</strong><br>
+Engage your users in real-time with interactive responses! Our real-time streaming support enables you to build applications that deliver immediate feedback, making conversations more dynamic and engaging.</p>
+</li>
+<li>
+<p><strong>📦 Modular Architecture</strong><br>
+Benefit from a flexible, modular architecture that allows you to extend and customize the functionality of your application easily. Add new features and capabilities as your project evolves, ensuring long-term adaptability.</p>
+</li>
+</ul>
+<h2 id="-installation">🎪 Installation</h2>
+<blockquote>
+<p>Add <code>mdb_dart</code> to your <code>pubspec.yaml</code> file:</p>
+</blockquote>
+<h6 id="pubspecyaml">pubspec.yaml</h6>
+<pre class="language-yaml"><code class="language-yaml">dependencies:
+  mdb_dart: ^0.0.1
+</code></pre>
+<blockquote>
+<p>Then run:</p>
+</blockquote>
+<h6 id="bash">bash</h6>
+<pre class="language-bash"><code class="language-bash">dart pub get
+</code></pre>
+<h2 id="-getting-started">🏁 Getting Started</h2>
+<p>Import the library and create a client:</p>
+<pre class="language-dart"><code class="language-dart">import 'package:mdb_dart/mdb_dart.dart';
+
+void main() async {
+  final client = Client('YOUR_API_KEY');
+  // Now you're ready to use the SDK!
+}
+</code></pre>
+<hr>
+<h2 id="-api-reference">📘 API Reference</h2>
+<h3 id="clienthttpsgithubcomarnavk-09mdb_dartblobmainlibsrcclientdartl32"><a href="https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/client.dart#L32">Client</a></h3>
+<table>
+<thead>
+<tr>
+<th>Method/Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/client.dart#L38"><code>RestAPI api</code></a></td>
+<td>Instance for making API calls</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/client.dart#L39"><code>Datasources datasources</code></a></td>
+<td>Manages data sources</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/client.dart#L40"><code>Minds minds</code></a></td>
+<td>Manages minds (AI models)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="datasourceshttpsgithubcomarnavk-09mdb_dartblobmainlibsrcdatasourcesdartl65"><a href="https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L65">Datasources</a></h3>
+<table>
+<thead>
+<tr>
+<th>Method/Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L154"><code>list()</code></a></td>
+<td>List all datasources</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L198"><code>get(String name)</code></a></td>
+<td>Get a specific datasource</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L118"><code>create(DatabaseConfig dsConfig, {bool replace = false})</code></a></td>
+<td>Create a new datasource</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L239"><code>drop(String name)</code></a></td>
+<td>Delete a datasource</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L9"><code>DatabaseConfig(name, engine, description, connectionData, tables)</code></a></td>
+<td>Configuration details for a database</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mindshttpsgithubcomarnavk-09mdb_dartblobmainlibsrcmindsdartl377"><a href="https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L377">Minds</a></h3>
+<table>
+<thead>
+<tr>
+<th>Method/Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L404"><code>list()</code></a></td>
+<td>List all minds (AI models)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L437"><code>get(String name)</code></a></td>
+<td>Get a specific mind (AI model)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L488"><code>create({required String name, modelName, provider, promptTemplate, datasources})</code></a></td>
+<td>Create a new mind</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L552"><code>drop(String name)</code></a></td>
+<td>Delete a mind</td>
+</tr>
+</tbody>
+</table>
+<p>Certainly! Here's how you can structure the API reference table for the <code>Mind</code> class in your README:</p>
+<h3 id="mindhttpsgithubcomarnavk-09mdb_dartblobmainlibsrcmindsdartl37"><a href="https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L37">Mind</a></h3>
+<table>
+<thead>
+<tr>
+<th>Method/Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L101"><code>update({String? name, modelName, provider, promptTemplate, datasources, parameters})</code></a></td>
+<td>Updates the properties of the mind.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L161"><code>addDatasource(dynamic datasource)</code></a></td>
+<td>Adds a new datasource to the mind.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L195"><code>delDatasource(dynamic datasource)</code></a></td>
+<td>Deletes a specific datasource from the mind.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L238"><code>completion(String message)</code></a></td>
+<td>Sends a chat message to the Mind API and retrieves a completion response.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L286"><code>streamCompletion(String message)</code></a></td>
+<td>Streams chat completions from the Mind API based on a user's message.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L353"><code>fromJson(Client client, Map&lt;String, dynamic&gt; json)</code></a></td>
+<td>Creates a new instance of Mind from a JSON map.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="exceptions">Exceptions</h3>
+<table>
+<thead>
+<tr>
+<th>Exception</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/exceptions.dart#L4"><code>ObjectNotFound([String message = 'Object not found.'])</code></a></td>
+<td>Thrown when a requested object cannot be found.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/exceptions.dart#L15"><code>ObjectAlreadyExists([String message = 'Object already exists.'])</code></a></td>
+<td>Thrown when trying to create an object that already exists.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/exceptions.dart#L26"><code>ObjectNotSupported([String message = 'Object not supported.'])</code></a></td>
+<td>Thrown when an unsupported operation is attempted.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/exceptions.dart#L37"><code>Forbidden([String message = 'Access forbidden.'])</code></a></td>
+<td>Thrown when access is forbidden.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/exceptions.dart#L48"><code>Unauthorized([String message = 'Unauthorized access.'])</code></a></td>
+<td>Thrown when access is unauthorized.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/exceptions.dart#L59"><code>UnknownError([String message = 'An unknown error occurred.'])</code></a></td>
+<td>Thrown for unspecified errors.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/exceptions.dart#L70"><code>ValueError(String message)</code></a></td>
+<td>Thrown when a value is invalid or out of range.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-usage-examples">🌟 Usage Examples</h2>
+<h3 id="-managing-datasources">💿 Managing <code>Datasources</code></h3>
+<blockquote>
+<h4 id="list-datasources">List Datasources</h4>
+</blockquote>
+<pre class="language-dart"><code class="language-dart">List&lt;Datasource&gt; datasources = await client.datasources.list();
+for (var ds in datasources) {
+  print('Datasource: ${ds.name}');
+}
+</code></pre>
+<blockquote>
+<h4 id="create-a-datasource">Create a Datasource</h4>
+</blockquote>
+<pre class="language-dart"><code class="language-dart">final newDatasource = await client.datasources.create(
+  DatabaseConfig(
+    name: 'my_postgres_db',
+    engine: 'postgres',
+    description: 'My PostgreSQL Database',
+    connectionData: {
+      'host': 'localhost',
+      'port': 5432,
+      'user': 'username',
+      'password': 'password',
+      'database': 'mydb',
+    },
+  )
+);
+print('Created datasource: ${newDatasource.name}');
+</code></pre>
+<blockquote>
+<h4 id="get-a-datasource">Get a Datasource</h4>
+</blockquote>
+<pre class="language-dart"><code class="language-dart">Datasource datasource = await client.datasources.get('my_postgres_db');
+print('Datasource engine: ${datasource.engine}');
+</code></pre>
+<blockquote>
+<h4 id="delete-a-datasource">Delete a Datasource</h4>
+</blockquote>
+<pre class="language-dart"><code class="language-dart">await client.datasources.drop('my_postgres_db');
+print('Datasource deleted successfully');
+</code></pre>
+<h3 id="-managing-minds">🧠 Managing <code>Minds</code></h3>
+<blockquote>
+<h4 id="list-minds">List Minds</h4>
+</blockquote>
+<pre class="language-dart"><code class="language-dart">List&lt;Mind&gt; minds = await client.minds.list();
+for (var mind in minds) {
+  print('Mind: ${mind.name}');
+}
+</code></pre>
+<blockquote>
+<h4 id="create-a-mind">Create a Mind</h4>
+</blockquote>
+<pre class="language-dart"><code class="language-dart">final newMind = await client.minds.create(
+  name: 'my_predictor',
+  modelName: 'gpt-4o',
+  provider: 'openai',
+  promptTemplate: 'Predict the next value: {{input}}',
+  datasources: ['my_postgres_db'],
+);
+print('Created mind: ${newMind.name}');
+</code></pre>
+<blockquote>
+<h4 id="get-a-mind">Get a Mind</h4>
+</blockquote>
+<pre class="language-dart"><code class="language-dart">Mind mind = await client.minds.get('my_predictor');
+print('Mind model: ${mind.modelName}');
+</code></pre>
+<blockquote>
+<h4 id="delete-a-mind">Delete a Mind</h4>
+</blockquote>
+<pre class="language-dart"><code class="language-dart">await client.minds.drop('my_predictor');
+print('Mind deleted successfully');
+</code></pre>
+<blockquote>
+<h4 id="using-a-mind-for-predictions">Using a Mind for Predictions</h4>
+</blockquote>
+<pre class="language-dart"><code class="language-dart">Mind mind = await client.minds.get('my_predictor');
+final completion = await mind.completion('What will be the stock price tomorrow?');
+print('Prediction: ${completion.choices.first.message.content}');
+</code></pre>
+<blockquote>
+<h4 id="streaming-completions">Streaming Completions</h4>
+</blockquote>
+<pre class="language-dart"><code class="language-dart">Mind mind = await client.minds.get('my_predictor');
+final stream = await mind.streamCompletion('Explain quantum computing');
+await for (var chunk in stream) {
+  print('Chunk: ${chunk.choices.first.delta.content}');
+}
+</code></pre>
+<hr>
+<h2 align="center">📹 Contributing</h2>
+<p align="center">
+<strong>
+We welcome contributions to improve and expand the MindsDB Dart SDK!
+To get started with contributing, please follow the guidelines outlined in our <a href="CONTRIBUTING.md"><strong>CONTRIBUTING</strong></a> file.
+</strong>
+</p>
+<h2 align="center">📄 License</h2>
+<p align="center">
+This project is licensed under the <code> Mozilla Public License 2.0 </code> - see the <a href="LICENSE">LICENSE</a> file for details.
+</p>
+<hr>
+<p align="center">
+    <strong>If you find this project helpful, please give it a ⭐ on GitHub!</strong>
+</p>
+<hr>
+<div class="markdown-alert markdown-alert-warning">
+<p class="markdown-alert-title">Warning</p>
+<p><em>This repository is heavily influenced by the <a href="https://github.com/mindsdb/minds_python_sdk">minds_python_sdk</a> and mirrors its structure and functionality.</em></p>
+</div>
+</section>
+
+
+      <section class="summary">
+          <h2>Libraries</h2>
+        <dl>
+          <dt id="mdb_dart">
+  <span class="name"><a href="mdb_dart/mdb_dart-library.html">mdb_dart</a></span> 
+
+</dt>
+<dd>🐘 MindsDB Dart SDK
+</dd>
+
+        </dl>
+      </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li class="self-crumb">mdb_dart package</li>
+</ol>
+
+
+    <h5 class="hidden-xs"><span class="package-name">mdb_dart</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="mdb_dart/mdb_dart-library.html">mdb_dart</a></li>
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div>
+
+</main>
+
+<footer>
+  <span class="no-break">
+    mdb_dart
+      0.0.1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+
