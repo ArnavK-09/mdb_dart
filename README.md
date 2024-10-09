@@ -113,7 +113,6 @@ void main() async {
 | [`create({required String name, modelName, provider, promptTemplate, datasources})`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L488) | Create a new mind              |
 | [`drop(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L552)                                                                | Delete a mind                  |
 
-Certainly! Here's how you can structure the API reference table for the `Mind` class in your README:
 
 ### [Mind](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L37)
 
