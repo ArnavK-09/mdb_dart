@@ -1,7 +1,7 @@
 <h1 align="center">🎯 Minds Dart 🎯</h1>
 <br />
 <p align="center">
-    <img alt="hero" width="450" src="https://cdn.prod.website-files.com/62a8755be8bcc86e6307def8/634aea01a7ad04c1c66b19c2_Mindsdb-Core%20logo%20white.png" />
+    <img alt="hero" width="450" src="https://cdn.prod.website-files.com/62a8755be8bcc86e6307def8/634af4c76088703e4422ed06_Mindsdb%20white%20logo%20prev-p-500.jpg" />
 </p>
 <br /><br />
 <p align="center">
