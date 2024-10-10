@@ -1,8 +1,8 @@
-import 'package:dartenv/dartenv.dart';
+// Import mdb_dart
 import 'package:mdb_dart/mdb_dart.dart';
 
 // Fetching API Key
-final apiKey = env("API_KEY");
+final apiKey = "YOUR_API_KEY";
 
 // Example
 void main(List<String> arguments) async {
