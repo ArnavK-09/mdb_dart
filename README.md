@@ -254,7 +254,7 @@ To get started with contributing, please follow the guidelines outlined in our <
 <h2 align="center">📄 License</h2>
 
 <p align="center">
-This project is licensed under the <code> Mozilla Public License 2.0 </code> - see the <a href="https://github.com/ArnavK-09/mdb_dart/blob/main/LICENSE"><strong>LICENSE</strong></a> file for details.
+This project is licensed under the <code>Mozilla Public License 2.0</code> - see the <a href="https://github.com/ArnavK-09/mdb_dart/blob/main/LICENSE"><strong>LICENSE</strong></a> file for details.
 </p>
 
 ---
