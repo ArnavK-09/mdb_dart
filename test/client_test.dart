@@ -12,7 +12,7 @@ void main() {
     test('Wrong API key does not works', () async {
       final client = minds.Client("wrong api key");
       expect(() async => await client.datasources.get('example_db'),
-          throwsA(isA<Forbidden>()));
+          throwsA(isA<Unauthorized>()));
     });
 
     test('Correct API key works find', () async {
