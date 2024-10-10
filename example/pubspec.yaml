@@ -9,8 +9,6 @@ environment:
 # Add regular dependencies here.
 dependencies:
   mdb_dart: ^0.0.1
-  dartenv: ^1.0.2
-  # path: ^1.8.0
 
 dev_dependencies:
   lints: ^4.0.0
