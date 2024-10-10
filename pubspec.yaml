@@ -1,6 +1,6 @@
 name: mdb_dart
 description:  A powerful and intuitive SDK for interacting with the Minds AI API. Seamlessly integrate machine learning capabilities into your Dart applications!
-version: 0.0.3
+version: 0.0.4
 repository: https://github.com/ArnavK-09/mdb_dart
 homepage: https://arnavk-09.github.io/mdb_dart/
 
