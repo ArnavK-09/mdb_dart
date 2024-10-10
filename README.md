@@ -247,10 +247,8 @@ await for (var chunk in stream) {
 <h2 align="center">📹 Contributing</h2>
 
 <p align="center">
-<strong>
 We welcome contributions to improve and expand the Minds AI Dart SDK!
 To get started with contributing, please follow the guidelines outlined in our <a href="CONTRIBUTING.md"><strong>CONTRIBUTING</strong></a> file.
-</strong>
 </p>
 
 <h2 align="center">📄 License</h2>
