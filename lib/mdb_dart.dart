@@ -1,4 +1,4 @@
-/// ### 🐘 Minds Dart SDK
+/// ### 🎯 Minds Dart SDK
 /// A library for interacting with the Minds API using Dart.
 ///
 /// This SDK provides functionality to manage datasources and minds,
