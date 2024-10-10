@@ -2,7 +2,7 @@
 
 > [!NOTE]
 >
-> This directory contains practical examples demonstrating how to use the `mdb_dart` package to interact with the MindsDB API. These examples illustrate various functionalities and showcase real-world applications of the SDK.
+> This directory contains practical examples demonstrating how to use the `mdb_dart` package to interact with the Minds API. These examples illustrate various functionalities and showcase real-world applications of the SDK.
 
 ---
 

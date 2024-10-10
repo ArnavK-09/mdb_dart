@@ -1,9 +1,9 @@
 import 'package:mdb_dart/mdb_dart.dart';
 
-/// Represents a client for interacting with the MindsDB API.
+/// Represents a client for interacting with the Minds API.
 ///
 /// The [Client] class is responsible for managing connections to the
-/// MindsDB API, providing access to various functionalities such as
+/// Minds API, providing access to various functionalities such as
 /// managing datasources and minds.
 ///
 /// #### Properties:
@@ -20,9 +20,9 @@ import 'package:mdb_dart/mdb_dart.dart';
 ///
 ///   - **Parameters:**
 ///     - **`apiKey`**: [String]
-///       The API key for authenticating with the MindsDB API.
+///       The API key for authenticating with the Minds API.
 ///     - **`baseURL`**: [String] (optional)
-///       An optional base URL for the MindsDB API. Defaults to "https://mdb.ai".
+///       An optional base URL for the Minds API. Defaults to "https://mdb.ai".
 ///
 /// #### Example:
 /// ```dart
@@ -41,7 +41,7 @@ class Client {
 
   /// Creates a new [Client] instance with the specified API key and optional base URL.
   ///
-  /// The [apiKey] is required for authenticating with the MindsDB API.
+  /// The [apiKey] is required for authenticating with the Minds AI API.
   /// The [baseURL] is optional and defaults to "https://mdb.ai".
   Client(String apiKey, {String? baseURL = "https://mdb.ai"}) {
     api = RestAPI(apiKey, baseURL!);

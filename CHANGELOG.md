@@ -1,3 +1,12 @@
+##  v0.0.3
+
+- 🌡️ chore: updated example ([d1b9d58](https://github.com/ArnavK-09/mddb/commit/d1b9d58))
+- 🌡️ chore: updated example ([140bea9](https://github.com/ArnavK-09/mddb/commit/140bea9))
+- 🌡️ chore: updated example meta ([28eea51](https://github.com/ArnavK-09/mddb/commit/28eea51))
+- 🎬 ci(tests): fixed typo ([72888fd](https://github.com/ArnavK-09/mddb/commit/72888fd))
+- 🎬 ci(tests): include paths ([7ae8be1](https://github.com/ArnavK-09/mddb/commit/7ae8be1))
+- 🎲 docs: readme typo ([f12f6fd](https://github.com/ArnavK-09/mddb/commit/f12f6fd))
+
 ## v0.0.2
 
 - 🌟 feat: example ([0266088](https://github.com/ArnavK-09/mddb/commit/0266088))

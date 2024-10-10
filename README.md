@@ -20,7 +20,7 @@
 
 > [!NOTE]
 >
-> A powerful and intuitive **Dart SDK** for interacting with the **MindsDB AI API**. Seamlessly integrate machine learning capabilities into your Dart applications!
+> A powerful and intuitive **Dart SDK** for interacting with the **Minds AI API**. Seamlessly integrate machine learning capabilities into your Dart applications!
 
 ## 📚 Table of Contents
 
@@ -42,16 +42,16 @@
 ## 🚀 Features
 
 - **🔐 Secure API Authentication**  
-  Safeguard your application with cutting-edge authentication methods that ensure your connection to the MindsDB API remains protected and confidential. Experience peace of mind while accessing advanced AI functionalities.
+  Safeguard your application with cutting-edge authentication methods that ensure your connection to the Minds API remains protected and confidential. Experience peace of mind while accessing advanced AI functionalities.
 
 - **📊 Intuitive Data Source Management**  
   Easily manage and configure your data sources with sdk. Add, modify, or remove data connections effortlessly, allowing your AI models to access the most relevant and up-to-date information.
 
-- **🧠 Tailored AI Model Creation (MindsDB AI)**  
+- **🧠 Tailored AI Model Creation (Minds AI)**  
   Design bespoke AI models that suit your specific requirements. With our platform, you can create, customize, and optimize Minds that deliver personalized responses, making your applications smarter and more intuitive.
 
-- **🔄 Effortless MindsDB API Integration**  
-  Experience a hassle-free integration with the MindsDB API, enabling you to tap into the full spectrum of AI capabilities quickly. Connect your systems and workflows seamlessly, enhancing your application’s functionality.
+- **🔄 Effortless Minds API Integration**  
+  Experience a hassle-free integration with the Minds API, enabling you to tap into the full spectrum of AI capabilities quickly. Connect your systems and workflows seamlessly, enhancing your application’s functionality.
 
 - **📡 Real-time Interaction Capabilities**  
   Engage your users in real-time with interactive responses! Our real-time streaming support enables you to build applications that deliver immediate feedback, making conversations more dynamic and engaging.
@@ -248,7 +248,7 @@ await for (var chunk in stream) {
 
 <p align="center">
 <strong>
-We welcome contributions to improve and expand the MindsDB Dart SDK!
+We welcome contributions to improve and expand the Minds AI Dart SDK!
 To get started with contributing, please follow the guidelines outlined in our <a href="CONTRIBUTING.md"><strong>CONTRIBUTING</strong></a> file.
 </strong>
 </p>

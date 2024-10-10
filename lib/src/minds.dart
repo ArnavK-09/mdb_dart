@@ -12,10 +12,10 @@ import 'exceptions.dart';
 const String defaultPromptTemplate =
     "Use your database tools to answer the user's question: {{question}}";
 
-/// Represents a Mind in the MindsDB project.
+/// Represents a Mind in the Minds AI project.
 ///
 /// This class encapsulates the properties and methods associated with a Mind,
-/// allowing for interaction with the MindsDB API.
+/// allowing for interaction with the Minds AI API.
 ///
 /// #### Properties:
 /// - **`name`**: [String]
@@ -328,7 +328,7 @@ class Mind {
   ///
   /// #### Parameters:
   /// - **`client`**: [Client]
-  ///   The client used to interact with the MindsDB API.
+  ///   The client used to interact with the Minds AI API.
   /// - **`json`**: [Map<String, dynamic>]
   ///   A map containing the JSON representation of a Mind.
   ///
@@ -365,7 +365,7 @@ class Mind {
 }
 
 /// ### Minds
-/// A class for managing [Mind]s in the MindsDB API.
+/// A class for managing [Mind]s in the Minds AI API.
 ///
 /// #### Constructor:
 /// - **`Minds(Client client)`**
@@ -373,7 +373,7 @@ class Mind {
 ///
 ///   - **Parameters**:
 ///     - **`client`**: [Client]
-///       The client instance used to interact with the MindsDB API.
+///       The client instance used to interact with the Minds AI API.
 class Minds {
   final mdb_dart.Client client;
   final String project = 'mindsdb';
@@ -385,7 +385,7 @@ class Minds {
 
   /// Retrieves a list of all [Mind] objects associated with the current project.
   ///
-  /// This function fetches the details of minds from the MindsDB API and
+  /// This function fetches the details of minds from the Minds AI API and
   /// constructs a list of [Mind] objects based on the retrieved data.
   ///
   /// #### Returns:
@@ -415,7 +415,7 @@ class Minds {
 
   /// Retrieves a specific [Mind] object identified by [name].
   ///
-  /// This function fetches the details of a mind from the MindsDB API
+  /// This function fetches the details of a mind from the Minds AI API
   /// using the provided name. If the mind does not exist, it may result
   /// in an [ObjectNotFound] exception.
   ///
@@ -442,7 +442,7 @@ class Minds {
 
   /// Creates a new [Mind] object with the specified parameters.
   ///
-  /// This function initializes a new mind in the MindsDB system.
+  /// This function initializes a new mind in the Minds AI system.
   /// If a mind with the same name already exists and [replace] is set to
   /// true, the existing mind will be dropped before creating a new one.
   ///

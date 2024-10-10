@@ -1,4 +1,4 @@
-<h1 align="center">🎯 Contributing to MindsDB Dart SDKt 🎯</h1>
+<h1 align="center">🎯 Contributing to Minds Dart SDKt 🎯</h1>
 <br />
 <p align="center">
     <img alt="hero" width="450" src="https://cdn.prod.website-files.com/62a8755be8bcc86e6307def8/634af4c6bca0d233ef86835a_Mindsdb%20white%20logo.png" />
@@ -6,7 +6,7 @@
 
 > [!NOTE]
 >
-> We appreciate your interest in contributing to the **MindsDB Dart SDK**. By contributing, you can help improve the functionality and make the SDK better for everyone. This guide provides everything you need to know about contributing to this repository.
+> We appreciate your interest in contributing to the **Minds Dart SDK**. By contributing, you can help improve the functionality and make the SDK better for everyone. This guide provides everything you need to know about contributing to this repository.
 
 ## 🛠️ Getting Started
 
