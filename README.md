@@ -88,7 +88,7 @@ void main() async {
 
 ### [Client](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/client.dart#L32)
 
-| Method/Property                                                                                      | Description                   |
+| Property                                                                                      | Description                   |
 | ---------------------------------------------------------------------------------------------------- | ----------------------------- |
 | [`RestAPI api`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/client.dart#L38)             | Instance for making API calls |
 | [`Datasources datasources`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/client.dart#L39) | Manages data sources          |
@@ -96,7 +96,7 @@ void main() async {
 
 ### [Datasources](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L65)
 
-| Method/Property                                                                                                                                    | Description                          |
+| Method                                                                                                                                    | Description                          |
 | -------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
 | [`list()`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L154)                                                          | List all datasources                 |
 | [`get(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L198)                                                | Get a specific datasource            |
@@ -106,7 +106,7 @@ void main() async {
 
 ### [Minds](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L377)
 
-| Method/Property                                                                                                                                               | Description                    |
+| Method                                                                                                                                               | Description                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
 | [`list()`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L404)                                                                           | List all minds (AI models)     |
 | [`get(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L437)                                                                 | Get a specific mind (AI model) |
@@ -116,7 +116,7 @@ void main() async {
 
 ### [Mind](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L37)
 
-| Method/Property                                                                                                                                                   | Description                                                               |
+| Method                                                                                                                                                   | Description                                                               |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
 | [`update({String? name, modelName, provider, promptTemplate, datasources, parameters})`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L101) | Updates the properties of the mind.                                       |
 | [`addDatasource(dynamic datasource)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L161)                                                    | Adds a new datasource to the mind.                                        |
