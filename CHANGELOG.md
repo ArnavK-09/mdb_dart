@@ -1,4 +1,4 @@
-# v0.0.4
+## v0.0.4
 
 - 🧪 test(client): finally backend corrected status code for wrong api key ([5568cf9](https://github.com/ArnavK-09/mddb/commit/5568cf9))
 - 🚀 refactor: mindss db -> minds ai ([7c4495d](https://github.com/ArnavK-09/mddb/commit/7c4495d))
