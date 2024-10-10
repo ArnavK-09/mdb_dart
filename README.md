@@ -63,7 +63,7 @@
 
 > Add **[`mdb_dart`](https://pub.dev/packages/mdb_dart)** to your project!
 
-###### bash
+###### terminal
 
 ```bash
 dart pub add mdb_dart
