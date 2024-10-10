@@ -4,10 +4,10 @@ on:
   workflow_dispatch:
   push:
     branches: ["*"]
-    paths: ["lib/**"]
+    paths: ["lib/**", "test/**", "example/**"]
   pull_request:
     branches: ["*"]
-    paths: ["lib/**"]
+    paths: ["lib/**", "test/**", "example/**"]
 
 env:
   API_KEY: ${{ secrets.API_KEY }}
