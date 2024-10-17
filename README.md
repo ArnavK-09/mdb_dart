@@ -1,7 +1,7 @@
 <h1 align="center">🎯 Minds Dart 🎯</h1>
 <br />
 <p align="center">
-    <img alt="hero" width="450" src="https://raw.githubusercontent.com/ArnavK-09/mdb_dart/refs/heads/main/.github/hero.png" />
+    <img alt="hero" width="450" src="https://raw.githubusercontent.com/ArnavK-09/mdb_dart/refs/heads/main/.github/hero.png" style="max-width: 100%;"/>
 </p>
 <br /><br />
 <p align="center">
