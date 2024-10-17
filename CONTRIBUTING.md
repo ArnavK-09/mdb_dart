@@ -1,7 +1,7 @@
 <h1 align="center">🎯 Contributing to Minds Dart SDK 🎯</h1>
 <br />
 <p align="center">
-    <img alt="hero" width="450" src="https://cdn.prod.website-files.com/62a8755be8bcc86e6307def8/634af4c6bca0d233ef86835a_Mindsdb%20white%20logo.png" />
+    <img alt="hero" width="450" src="https://raw.githubusercontent.com/ArnavK-09/mdb_dart/refs/heads/main/.github/hero.png" />
 </p>
 
 > [!NOTE]
