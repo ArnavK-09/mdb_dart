@@ -1,0 +1,35 @@
+name: 💥 Run example code...
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["*"]
+    paths: ["example/**"]
+  pull_request:
+    branches: ["*"]
+    paths: ["example/**"]
+
+env:
+  API_KEY: ${{ secrets.API_KEY }}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up Dart
+        uses: dart-lang/setup-dart@v1
+
+      - name: Get dependencies
+        run: dart pub get
+
+      - name: Head to directory
+        run: cd example
+
+      - name: Create .env file
+        run: echo "API_KEY=$API_KEY" > .env
+
+      - name: Run example sceipt
+        run: dart run main.dart
