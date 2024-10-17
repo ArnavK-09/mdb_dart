@@ -2,7 +2,7 @@
 import 'package:mdb_dart/mdb_dart.dart';
 
 // Fetching API Key
-final apiKey = "YOUR_API_KEY";
+final apiKey = "mdb_29xACcSOYMGcmusbLbK7HObgQ7nnsCbt8WSlFprR4fDt";
 
 // Example
 void main(List<String> arguments) async {

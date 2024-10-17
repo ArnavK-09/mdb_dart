@@ -347,7 +347,7 @@ class Mind {
         if (ds is Datasource) {
           return ds.toJson();
         }
-        return ds; 
+        return ds;
       }).toList(),
     };
   }

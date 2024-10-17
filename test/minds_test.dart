@@ -24,10 +24,6 @@ minds.Client getClient() {
 // Whole Testing Stuff Here
 void main() {
   group('🧠 Minds Module Testing:-', () {
-    setUp(() async {
-      await client.datasources.create(tempDatasource, replace: true);
-    });
-
     test('Creating mind', () async {
       final res = await client.minds
           .create(name: mindName, datasources: [tempDatasource], replace: true);
@@ -119,8 +115,6 @@ void main() {
       expect(() async => await client.minds.drop(mindName2), returnsNormally);
       expect(() async => await client.minds.drop(mindName),
           throwsA(isA<ObjectNotFound>()));
-      expect(() async => await client.datasources.drop(tempDatasource.name),
-          returnsNormally);
     });
   });
 }

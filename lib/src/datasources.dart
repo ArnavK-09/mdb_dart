@@ -66,48 +66,6 @@ class Datasource extends DatabaseConfig {
     super.connectionData,
     super.tables,
   });
-
-  /// Creates a new instance of [Datasource] from a JSON map.
-  ///
-  /// This factory constructor takes a [Client] and a JSON map as input,
-  /// extracting relevant fields to initialize a [Datasource] object.
-  ///
-  /// #### Parameters:
-  /// - **`json`**: [Map<String, dynamic>]
-  ///   A map containing the JSON representation of a Datasource.
-  ///
-  /// #### Returns:
-  /// - **`Datasource`**
-  ///   An instance of [Datasource] initialized with values from the JSON map.
-  ///
-  /// #### Example:
-  /// ```dart
-  /// Map<String, dynamic> jsonData = {
-  ///   'name': 'example_ds',
-  ///   'engine': 'postgres',
-  ///   'description': 'House Sales Data',
-  ///   'connection_data': {
-  ///     'user': 'demo_user',
-  ///     'password': 'demo_password',
-  ///     'host': 'samples.mindsdb.com',
-  ///     'port': '5432',
-  ///     'database': 'demo',
-  ///     'schema': 'demo_data'
-  ///   },
-  ///   'tables': ['table1', 'table2'],
-  /// };
-  ///
-  /// Datasource ds = Datasource.fromJson(jsonData);
-  /// ```
-  factory Datasource.fromJson(Map<String, dynamic> json) {
-    return Datasource(
-      name: json['name'],
-      engine: json['engine'],
-      description: json['description'],
-      connectionData: Map<String, dynamic>.from(json['connection_data']),
-      tables: List<String>.from(json['tables'] ?? []),
-    );
-  }
 }
 
 /// A class for managing database datasources using the [Client].
