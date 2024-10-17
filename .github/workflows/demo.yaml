@@ -23,13 +23,13 @@ jobs:
         uses: dart-lang/setup-dart@v1
 
       - name: Get dependencies
+        working-directory: example
         run: dart pub get
 
-      - name: Head to directory
-        run: cd example
-
       - name: Create .env file
+        working-directory: example
         run: echo "API_KEY=$API_KEY" > .env
 
-      - name: Run example sceipt
+      - name: Run example script
+        working-directory: example
         run: dart run main.dart
