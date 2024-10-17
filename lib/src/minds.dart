@@ -321,6 +321,37 @@ class Mind {
     });
   }
 
+  /// Converts the Mind instance into a JSON map.
+  ///
+  /// This method serializes the current Mind object into a JSON format.
+  ///
+  /// #### Returns:
+  /// - **`Map<String, dynamic>`**
+  ///   A [Map<String, dynamic>] representation of the Mind object that can be serialized into JSON.
+  ///
+  /// #### Example:
+  /// ```dart
+  /// final mindJson = mind.toJson();
+  /// print('Mind JSON: $mindJson');
+  /// ```
+  Map<String, dynamic> toJson() {
+    return {
+      'name': name,
+      'model_name': modelName,
+      'provider': provider,
+      'parameters': parameters,
+      'prompt_template': promptTemplate,
+      'created_at': createdAt,
+      'updated_at': updatedAt,
+      'datasources': datasources.map((ds) {
+        if (ds is Datasource) {
+          return ds.toJson();
+        }
+        return ds; 
+      }).toList(),
+    };
+  }
+
   /// Creates a new instance of [Mind] from a JSON map.
   ///
   /// This factory constructor takes a [Client] and a JSON map as input,
