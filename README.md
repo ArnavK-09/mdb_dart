@@ -82,7 +82,7 @@ void main() async {
 }
 ```
 
-> [**View Demo Usage**](https://github.com/ArnavK-09/mdb_dart/blob/main/example%2Fmain.dart)
+> Checkout [`demo`](https://github.com/ArnavK-09/mdb_dart/blob/main/example%2Fmain.dart) code!
 
 ---
 
