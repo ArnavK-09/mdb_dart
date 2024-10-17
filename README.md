@@ -78,7 +78,7 @@ import 'package:mdb_dart/mdb_dart.dart';
 
 void main() async {
   final client = Client('YOUR_API_KEY');
-  // Now you're ready to use the SDK!
+  // Now you're ready to use the SDK!!!
 }
 ```
 
