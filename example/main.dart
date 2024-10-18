@@ -1,11 +1,11 @@
 // Import mdb_dart
 import 'package:mdb_dart/mdb_dart.dart';
 
-// Fetching API Key
-final apiKey = "YOUR_API_KEY";
-
 // Example
-void main() async {
+void main(List<String> arguments) async {
+  // Fetching API Key
+  final apiKey = arguments[0];
+
   // Initializing Client
   Client client = Client(apiKey);
 

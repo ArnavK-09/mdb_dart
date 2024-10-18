@@ -4,7 +4,7 @@ import 'package:http/http.dart';
 import 'rest_api.dart';
 import 'package:dart_openai/dart_openai.dart' as dart_openai;
 import 'datasources.dart';
-import "package:mdb_dart/mdb_dart.dart" as mdb_dart;
+import "../mdb_dart.dart" as mdb_dart;
 import 'package:http/http.dart' as http;
 import 'exceptions.dart';
 

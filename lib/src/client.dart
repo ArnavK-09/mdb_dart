@@ -1,4 +1,4 @@
-import 'package:mdb_dart/mdb_dart.dart';
+import '../mdb_dart.dart';
 
 /// Represents a client for interacting with the Minds API.
 ///

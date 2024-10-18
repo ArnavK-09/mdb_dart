@@ -1,6 +1,6 @@
 import 'dart:convert';
-import 'package:mdb_dart/mdb_dart.dart' as mdb_dart;
-import 'package:mdb_dart/src/exceptions.dart';
+import '../mdb_dart.dart' as mdb_dart;
+import 'exceptions.dart';
 
 /// Represents the configuration settings for a database.
 ///
@@ -128,17 +128,15 @@ class Datasources {
       {bool replace = false}) async {
     final name = dsConfig.name;
 
-    if (replace) {
-      try {
+    try {
+      if (replace) {
         await get(name);
         await drop(name);
-      } catch (e) {
-        // Ignore
       }
+    } catch (e) {
+      if (e is ObjectAlreadyExists) throw e;
     }
-
     await client.api.post('/datasources', dsConfig.toJson());
-
     return await get(name);
   }
 

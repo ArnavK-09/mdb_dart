@@ -1,5 +1,5 @@
-import 'package:mdb_dart/mdb_dart.dart' as minds;
-import 'package:mdb_dart/src/exceptions.dart';
+import '../lib/mdb_dart.dart' as minds;
+import '../lib/src/exceptions.dart';
 import 'package:test/test.dart';
 import 'package:dartenv/dartenv.dart';
 
