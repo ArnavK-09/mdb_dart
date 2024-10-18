@@ -105,6 +105,13 @@ void main() async {
 | [`create(DatabaseConfig dsConfig, {bool replace = false})`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L127) | Create a new datasource   |
 | [`drop(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L246)                                       | Delete a datasource       |
 
+### [Datasource](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L57)
+| Method                                                                                                                                                         | Description                                                                                                                                                           |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`Datasource({String name, String engine, String description, Map<String, dynamic>? connectionData, List<String>? tables})`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L57)                                  | Creates a new `Datasource` instance with required parameters `name`, `engine`, `description`, and optional `connectionData`, `tables`. Inherits from `DatabaseConfig`. |
+| [`fromJson(Map<String, dynamic> json)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L102)                                                                                                                     | Creates a new `Datasource` instance from a JSON map. Inherited fields include `name`, `engine`, `description`, `connectionData`, and `tables`.                         |
+| [`toJson()`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L57)                                                                                                                                                | Converts the `Datasource` instance into a JSON-compatible map. Inherited from `DatabaseConfig`.                                                                        |
+
 ### [Minds](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L408)
 
 | Method                                                                                                                                                        | Description                    |
