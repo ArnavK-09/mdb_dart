@@ -90,42 +90,41 @@ void main() async {
 
 ### [Client](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/client.dart#L32)
 
-| Property                                                                                      | Description                   |
+| Property                                                                                             | Description                   |
 | ---------------------------------------------------------------------------------------------------- | ----------------------------- |
-| [`RestAPI api`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/client.dart#L38)             | Instance for making API calls |
-| [`Datasources datasources`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/client.dart#L39) | Manages data sources          |
+| [`RestAPI api`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/client.dart#L34)             | Instance for making API calls |
+| [`Datasources datasources`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/client.dart#L37) | Manages data sources          |
 | [`Minds minds`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/client.dart#L40)             | Manages minds (AI models)     |
 
-### [Datasources](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L65)
+### [Datasources](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L74)
 
-| Method                                                                                                                                    | Description                          |
-| -------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
-| [`list()`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L154)                                                          | List all datasources                 |
-| [`get(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L198)                                                | Get a specific datasource            |
-| [`create(DatabaseConfig dsConfig, {bool replace = false})`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L118)         | Create a new datasource              |
-| [`drop(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L239)                                               | Delete a datasource                  |
-| [`DatabaseConfig(name, engine, description, connectionData, tables)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L9) | Configuration details for a database |
+| Method                                                                                                                                     | Description               |
+| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------- |
+| [`list()`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L161)                                                  | List all datasources      |
+| [`get(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L205)                                        | Get a specific datasource |
+| [`create(DatabaseConfig dsConfig, {bool replace = false})`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L127) | Create a new datasource   |
+| [`drop(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L246)                                       | Delete a datasource       |
 
-### [Minds](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L377)
+### [Minds](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L408)
 
-| Method                                                                                                                                               | Description                    |
+| Method                                                                                                                                                        | Description                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
-| [`list()`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L404)                                                                           | List all minds (AI models)     |
-| [`get(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L437)                                                                 | Get a specific mind (AI model) |
-| [`create({required String name, modelName, provider, promptTemplate, datasources})`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L488) | Create a new mind              |
-| [`drop(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L552)                                                                | Delete a mind                  |
-
+| [`list()`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L435)                                                                           | List all minds (AI models)     |
+| [`get(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L468)                                                                 | Get a specific mind (AI model) |
+| [`create({required String name, modelName, provider, promptTemplate, datasources})`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L519) | Create a new mind              |
+| [`drop(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L583)                                                                | Delete a mind                  |
 
 ### [Mind](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L37)
 
-| Method                                                                                                                                                   | Description                                                               |
+| Method                                                                                                                                                            | Description                                                               |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
 | [`update({String? name, modelName, provider, promptTemplate, datasources, parameters})`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L101) | Updates the properties of the mind.                                       |
 | [`addDatasource(dynamic datasource)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L161)                                                    | Adds a new datasource to the mind.                                        |
 | [`delDatasource(dynamic datasource)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L195)                                                    | Deletes a specific datasource from the mind.                              |
 | [`completion(String message)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L238)                                                           | Sends a chat message to the Mind API and retrieves a completion response. |
 | [`streamCompletion(String message)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L286)                                                     | Streams chat completions from the Mind API based on a user's message.     |
-| [`fromJson(Client client, Map<String, dynamic> json)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L353)                                   | Creates a new instance of Mind from a JSON map.                           |
+| [`fromJson(Client client, Map<String, dynamic> json)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L384)                                   | Creates a new instance of Mind from a JSON map.                           |
+| [`toJson()`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/minds.dart#L337)                                                                             | Converts the Mind instance into a JSON map.                               |
 
 ### Exceptions
 
