@@ -295,7 +295,7 @@ class Datasources {
 /// Represents a sample database configuration for a datasource named 'example_ds',
 /// using PostgreSQL as the database engine. Contains connection details for accessing
 /// the 'House Sales Data' database.
-const demoDatasourceConfigForTesting = (
+const demoDatasourceConfigForTesting = DatabaseConfig(
   name: 'example_ds',
   description: 'House Sales Data',
   engine: 'postgres',
