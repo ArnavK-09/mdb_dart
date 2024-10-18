@@ -96,14 +96,14 @@ void main() async {
 | [`Datasources datasources`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/client.dart#L37) | Manages data sources          |
 | [`Minds minds`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/client.dart#L40)             | Manages minds (AI models)     |
 
-### [Datasources](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L74)
+### [Datasources](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L116)
 
 | Method                                                                                                                                     | Description               |
 | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------- |
-| [`list()`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L161)                                                  | List all datasources      |
-| [`get(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L205)                                        | Get a specific datasource |
-| [`create(DatabaseConfig dsConfig, {bool replace = false})`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L127) | Create a new datasource   |
-| [`drop(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L246)                                       | Delete a datasource       |
+| [`list()`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L203)                                                  | List all datasources      |
+| [`get(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L247)                                        | Get a specific datasource |
+| [`create(DatabaseConfig dsConfig, {bool replace = false})`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L169) | Create a new datasource   |
+| [`drop(String name)`](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L288)                                       | Delete a datasource       |
 
 ### [Datasource](https://github.com/ArnavK-09/mdb_dart/blob/main/lib/src/datasources.dart#L57)
 | Method                                                                                                                                                         | Description                                                                                                                                                           |
