@@ -1,9 +1,9 @@
 name: 🕸 Deploy Dart Docs on Github Pages...
 
 on:
-  workflow_dispatch:
-  release:
-    types: [created]
+  workflow_dispatch:  
+  push:
+    branches: ["*"]
 
 permissions:
   contents: write
